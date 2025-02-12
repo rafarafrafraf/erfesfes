@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Urso</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: #fff;
+    }
+
+    .viewer {
+      width: 100vw;
+      height: 90vh;
+      border: none;
+    }
+
+    
+    .description {
+      font-size: 18px;
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+      max-width: 90%;
+      margin-top: 20px;
+      font-family: 'Arial', sans-serif;
+    }
+
+
+    .credits {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 16px;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .credits-symbol {
+      margin-right: 5px;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .credits-text {
+      font-size: 14px;
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+
+ 
+    .credits-text:hover {
+      color: #00ff00;
+    }
+
+    
+    .hitbox {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 150px;
+      height: 40px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <iframe 
+    class="viewer" 
+    src="https://embed.molview.org/v1/?mode=balls&cid=6013" 
+    title="Visualização 3D da Molécula via MolView">
+  </iframe>
+
+ 
+  <div class="description">
+    <p>A testosterona é um hormônio vital para o corpo humano, especialmente em homens, onde regula diversas funções. Ela é responsável pelo desenvolvimento das características sexuais masculinas, aumento da massa muscular, força e densidade óssea. A testosterona também influencia a energia, o humor e a saúde geral. No que diz respeito ao "armor", a testosterona é fundamental para o fortalecimento da musculatura e para o aumento da resistência física, proporcionando o suporte necessário para o crescimento muscular e a manutenção de uma boa forma física.</p>
+  </div>
+
+ 
+  <div class="credits">
+    <div class="credits-symbol">©</div>
+    <div class="credits-text" id="credits-text">Rafael Silva Santos</div>
+  </div>
+
+  
+  <div class="hitbox" id="hitbox"></div>
+
+  <script>
+  
+    const creditsText = document.getElementById('credits-text');
+    const hitbox = document.getElementById('hitbox');
+
+  
+  
+    hitbox.addEventListener('mouseenter', () => {
+      creditsText.textContent = 'Urso Cyborg';
+    });
+
+    hitbox.addEventListener('mouseleave', () => {
+      creditsText.textContent = 'Rafael Silva Santos';
+    });
+  </script>
+</body>
+</html>
